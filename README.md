@@ -3,7 +3,7 @@ Scribe client for node.js
 ## Installation
     $ npm install scribe
 ## Basic example
-
+Example of sending log entries to scribe server.
     var Scribe = require('scribe').Scribe;
 
     var scribe = new Scribe("localhost", 1234, {autoReconnect:true});
