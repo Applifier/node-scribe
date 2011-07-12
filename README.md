@@ -1,5 +1,5 @@
 # node-scribe
-Scribe client library for node.js
+Scribe client for node.js
 ## Installation
     $ npm install scribe
 ## Basic example

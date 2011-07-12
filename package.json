@@ -1,6 +1,6 @@
 {
   "name": "scribe",
-  "description": "Scribe client library",
+  "description": "Scribe client",
   "version": "0.0.1",
   "repository": {
     "type": "git",
