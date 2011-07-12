@@ -1,0 +1,1 @@
+module.exports = exports = require('./lib/scribe.js');
