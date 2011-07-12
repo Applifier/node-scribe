@@ -3,7 +3,7 @@ var thrift = require('thrift'),
     ttypes = require('../lib/gen-nodejs/scribe_types');
 
 
-exports.createServer = function() {
+var createServer = exports.createServer = function() {
 var server = thrift.createServer(scribe, {
   Log: function(entry, callback) {
     console.log("Server  received ", entry);
@@ -14,3 +14,9 @@ var server = thrift.createServer(scribe, {
 return server;
 };
 
+
+if(!module.parent) {
+  var server = createServer();
+  server.listen(3000);
+  console.log("Started in port 3000");
+}
