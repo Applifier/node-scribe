@@ -28,15 +28,15 @@ If autoReconnect is set to true and connection fails, client will store log entr
 Logger is designed to unify the data structure for entries send to scribe. Logger can also be used to replace the default functionality of the console object. Each entry contains the level, hostname, pid, caller (file and position) and the log message given as parameter. Values are separated by tabulators.
 
 # Log levels
-Levels are defined by the function used or by hand when using logMessage function.
-    0 : EMERG
-    1 : ALERT
-    2 : CRITICAL (critical)
-    3 : ERROR (error)
-    4 : WARN (warn)
-    5 : NOTICE
-    6 : INFO (info)
-    7 : DEBUG (debug, log)
+Levels are defined by the function used or by hand when using logMessage function.<br />
+    0 : EMERG <br />
+    1 : ALERT <br />
+    2 : CRITICAL (critical)<br />
+    3 : ERROR (error)<br />
+    4 : WARN (warn)<br />
+    5 : NOTICE<br />
+    6 : INFO (info)<br />
+    7 : DEBUG (debug, log)<br />
 
 # Example
 Example of using logger to replace node:s console object.
