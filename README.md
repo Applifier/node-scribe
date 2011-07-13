@@ -1,5 +1,5 @@
 # node-scribe
-Scribe client for node.js
+Scribe client for node.js. Project also includes a drop-in replacement (Logger) for the default console object.
 ## Installation
     $ npm install scribe
 ## Basic example
