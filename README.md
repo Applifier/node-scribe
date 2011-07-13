@@ -25,10 +25,10 @@ Example of sending log entries to scribe server.
 If autoReconnect is set to true and connection fails, client will store log entries to queue and flush when connection has be re-established.
 
 ## Logger
-Logger can be used to replace the default functionality of the console object. Each entry contains the level, hostname, pid, caller (file and position) and the log message given as parameter. Values are separated by tabulators.
+Logger is an drop-in replacement for the default console object. Each log entry contains the level, hostname, pid, caller (file and position) and the log message given as parameter. Values are separated by tabulators.
 
 ### Log levels
-Levels are defined by the function used or by hand when using logMessage function.<br />
+Levels are defined by the function used or by hand when using the logMessage function.<br />
     0 : EMERG <br />
     1 : ALERT <br />
     2 : CRITICAL (critical)<br />
