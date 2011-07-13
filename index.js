@@ -1,1 +1,2 @@
-module.exports = exports = require('./lib/scribe.js');
+module.exports.Scribe = exports.Scribe = require('./lib/scribe.js').Scribe;
+module.exports.Logger = exports.Logger = require('./lib/logger.js').Logger;
