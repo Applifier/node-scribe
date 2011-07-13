@@ -50,6 +50,8 @@ Example of using logger to replace node:s console object.
 
     });
 
+
+
 ## Licenses
 (The MIT License)
 
