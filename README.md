@@ -22,7 +22,7 @@ Example of sending log entries to scribe server.
     });
 
 ## autoReconnect = true
-If autoReconnect is set to true and connection fails, client will store log entries to queue and flush when connection has be re-established.
+If autoReconnect is set to true and connection fails, client will store log entries to queue and flush when connection has been re-established.
 
 ## Logger
 Logger is an drop-in replacement for the default console object. Each log entry contains the level, hostname, pid, caller (file and position) and the log message given as parameter. Values are separated by tabulators.
