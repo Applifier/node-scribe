@@ -21,7 +21,7 @@ module.exports = {
   },
   'test sending data' : function() {
     var server = scribeServer.createServer();
-    server.on('log', function(entry){
+    server.on('log', function(entry) {
       assert.equal(entry.length, 1, "Should have received one entry");
       assert.equal(entry[0].category, "foogroup");
       assert.equal(entry[0].message, "barmessage");
@@ -39,7 +39,7 @@ module.exports = {
   },
   'test queuing data' : function() {
     var server = scribeServer.createServer();
-    server.on('log', function(entry){
+    server.on('log', function(entry) {
       assert.equal(entry.length, 6, "Should have received 6 entries");
       setTimeout(function() {
         scribe.close();
