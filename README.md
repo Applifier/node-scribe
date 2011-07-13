@@ -27,7 +27,7 @@ If autoReconnect is set to true and connection fails, client will store log entr
 ## Logger
 Logger is designed to unify the data structure for entries send to scribe. Logger can also be used to replace the default functionality of the console object. Each entry contains the level, hostname, pid, caller (file and position) and the log message given as parameter. Values are separated by tabulators.
 
-# Log levels
+### Log levels
 Levels are defined by the function used or by hand when using logMessage function.<br />
     0 : EMERG <br />
     1 : ALERT <br />
@@ -38,7 +38,7 @@ Levels are defined by the function used or by hand when using logMessage functio
     6 : INFO (info)<br />
     7 : DEBUG (debug, log)<br />
 
-# Example
+### Example
 Example of using logger to replace node:s console object.
 
     var Scribe = require('scribe').Scribe;
