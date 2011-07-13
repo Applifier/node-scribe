@@ -24,6 +24,32 @@ Example of sending log entries to scribe server.
 ## autoReconnect = true
 If autoReconnect is set to true and connection fails, client will store log entries to queue and flush when connection has be re-established.
 
+## Using logger
+Example of using logger to replace node:s console object.
+
+    var Scribe = require('scribe').Scribe;
+    var Logger = require('scribe').Logger;
+
+    var scribe = new Scribe("localhost", 1234, {autoReconnect:true});
+    var logger = new Logger(scribe, "foobar");
+    scribe.open(function(err){
+
+      if(err) {
+        return console.log(err);
+      }
+
+      logger.log("foomessage");
+
+      logger.replaceConsole(); // replaces console with logger
+
+      console.log("foobar");
+
+      logger.releaseConsole(); // reverts changes made by replaceConsole();
+
+      scribe.close();
+
+    });
+
 ## Licenses
 (The MIT License)
 
