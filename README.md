@@ -24,7 +24,21 @@ Example of sending log entries to scribe server.
 ## autoReconnect = true
 If autoReconnect is set to true and connection fails, client will store log entries to queue and flush when connection has be re-established.
 
-## Using logger
+## Logger
+Logger is designed to unify the data structure for entries send to scribe. Logger can also be used to replace the default functionality of the console object. Each entry contains the level, hostname, pid, caller (file and position) and the log message given as parameter. Values are separated by tabulators.
+
+# Log levels
+Levels are defined by the function used or by hand when using logMessage function.
+    0 : EMERG
+    1 : ALERT
+    2 : CRITICAL (critical)
+    3 : ERROR (error)
+    4 : WARN (warn)
+    5 : NOTICE
+    6 : INFO (info)
+    7 : DEBUG (debug, log)
+
+# Example
 Example of using logger to replace node:s console object.
 
     var Scribe = require('scribe').Scribe;
@@ -51,8 +65,7 @@ Example of using logger to replace node:s console object.
     });
 
 
-
-## Licenses
+## License
 (The MIT License)
 
 Copyright(c) 2011 Applifier Ltd.<br />
