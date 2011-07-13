@@ -21,7 +21,8 @@ Example of sending log entries to scribe server.
 
     });
 
-## 
+## autoReconnect = true
+If autoReconnect is set to true and connection fails, client will store log entries to queue and flush when connection has be re-established.
 
 ## Licenses
 (The MIT License)
