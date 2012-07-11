@@ -1,5 +1,5 @@
 var assert = require('assert');
-var Scribe = require('scribe').Scribe;
+var Scribe = require('../lib/scribe').Scribe;
 var scribeServer = require('../test_utils/scribeserver');
 
 

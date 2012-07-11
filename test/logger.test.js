@@ -1,7 +1,7 @@
 var assert = require('assert');
-var Scribe = require('scribe').Scribe;
+var Scribe = require('../lib/scribe').Scribe;
 var scribeServer = require('../test_utils/scribeserver');
-var Logger = require('logger').Logger;
+var Logger = require('../lib/logger').Logger;
 
 module.exports = {
   'test construct': function() {
