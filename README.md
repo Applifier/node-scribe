@@ -102,6 +102,8 @@ object as the logger object, or simply pass 'console' from within your tests whe
 to a request related req object.
 
 Example:
+
+
     // Your function somewhere in your code, not directly related to any express request processing
     function someFunction(value, logger) {
       if (value == null) {
