@@ -94,6 +94,12 @@ Here's an example how we have used the writer to feed log lines to scribe:
        var str = RequestLog.formatTimestamp(new Date()) + "\t" + RequestLog.levelNames[level] + "\t" + hostname + "\t" + process.pid + "\t" + line + "\t" + id + "\t" + msg;
        scribe.send("comet", str);
     }));
+    
+Note that the req.log object is mostly compatible with the standard console object.
+This means that you can implement functions which accept an ubique 'logger' argument and you can log messages
+within these functions by calling for example logger.error("Something bad!"); Then you can pass the req.log
+object as the logger object, or simply pass 'console' from within your tests where you don't have access
+to a request related req object.
 
 
 ## License
