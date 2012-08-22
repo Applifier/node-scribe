@@ -64,6 +64,37 @@ Example of using logger to replace node:s console object.
 
     });
 
+# RequestLog
+
+Creates a middleware which will inject every req object with a log object.
+The log object contains an pseudo-unique id for each request in the req.log.id variable.
+
+In addition the req.log object contains console.log compatible logging functions:
+log, info, warn, error, critical.
+
+Each log message logged using those methods is passed into the custom writer() function,
+which the user must pass in the factory constructor.
+
+The writer takes the following arguments:
+function writer(level, request_id, line, message), where:
+ - level is the numeric log level as defined in Logger:
+     Logger.LOG_DEBUG = 7;
+     Logger.LOG_INFO = 6;
+     Logger.LOG_WARNING = 4;
+     Logger.LOG_ERROR = 3;
+     Logger.LOG_CRITICAL = 2;
+ - request_id is the pseudo-randomly generated unique id for the request
+ - line is a stacktrace line where the log message was generated, in form of "/path/to/file.js:line:character", eg "/path:tio:file.js:282:24"
+ - message is a concatenated string of all the arguments passed to the log function
+
+Here's an example how we have used the writer to feed log lines to scribe:
+
+    var hostname = require('os').hostname();
+    app.use(RequestLog.factory(function (level, id, line, msg) {
+       var str = RequestLog.formatTimestamp(new Date()) + "\t" + RequestLog.levelNames[level] + "\t" + hostname + "\t" + process.pid + "\t" + line + "\t" + id + "\t" + msg;
+       scribe.send("comet", str);
+    }));
+
 
 ## License
 (The MIT License)
