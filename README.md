@@ -102,20 +102,22 @@ object as the logger object, or simply pass 'console' from within your tests whe
 to a request related req object.
 
 Example:
+
+
     // Your function somewhere in your code, not directly related to any express request processing
     function someFunction(value, logger) {
       if (value == null) {
         logger.error("Value was null");
       }
     }
-
+    
     // Function which is directly related to express, for example a middleware
     function processRequest(req, res, next) {
       var value = req.query.value;
       someFunction(value, req.log);
       next();
     }
-
+    
     // You can test the someFunction in your TDD environment by passing console instead of req.log:
     test("my test", function() {
       someFunction("value", console);
