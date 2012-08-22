@@ -108,14 +108,14 @@ Example:
         logger.error("Value was null");
       }
     }
-
+    
     // Function which is directly related to express, for example a middleware
     function processRequest(req, res, next) {
       var value = req.query.value;
       someFunction(value, req.log);
       next();
     }
-
+    
     // You can test the someFunction in your TDD environment by passing console instead of req.log:
     test("my test", function() {
       someFunction("value", console);
