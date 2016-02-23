@@ -2,12 +2,18 @@
   "name": "scribe",
   "description": "Scribe client",
   "version": "0.0.10",
+  "scripts": {
+    "test": "make test"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/Applifier/node-scribe"
   },
   "dependencies": {
-    "thrift" : "0.7.0"
+    "thrift": "0.7.0"
   },
-  "author": "Applifier <opensource@applifier.com>"
+  "author": "Applifier <opensource@applifier.com>",
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  }
 }
