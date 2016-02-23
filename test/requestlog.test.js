@@ -2,37 +2,26 @@ var RequestLog = require('../lib/requestlog');
 var assert = require('assert');
 
 test("constructor", function(done) {
-
   assert.ok(RequestLog);
-
   done();
 });
-
 
 test("creates request id", function(done) {
-
   var req = {};
   var res = {};
-
   var middleware = RequestLog.factory();
-
   assert.ok(middleware != null);
-
   done();
 });
 
-
 test("can log something", function(done) {
-
   var req = {};
   var res = {};
   var buf = "";
 
   RequestLog.factory(function (level, id, line, msg) {
       buf += msg;
-      })(req, res, function() {});
-
-
+    })(req, res, function() {});
 
   req.log.log("test");
 
@@ -42,7 +31,6 @@ test("can log something", function(done) {
 });
 
 test("can figure out caller line", function(done) {
-
   var req = {};
   var res = {};
   var buf = "";
@@ -53,24 +41,21 @@ test("can figure out caller line", function(done) {
       buf += msg;
     })(req, res, function() {});
 
-
   req.log.log("test");
 
   assert.equal(buf, "test");
-  assert.equal(line, "Test.fn (/Users/juhomakinen/Development/node-scribe/test/requestlog.test.js:57:11)");
+  assert(line.indexOf("test/requestlog.test.js:44:11") > -1);
 
   done();
 });
 
 test("can pass level correctly", function(done) {
-
   var req = {};
   var res = {};
   var levels = [];
 
-
   RequestLog.factory(function (level, id, _line, msg) {
-    levels.push(level);
+      levels.push(level);
     })(req, res, function() {});
 
   req.log.log("test");
@@ -78,7 +63,6 @@ test("can pass level correctly", function(done) {
   req.log.warn("test");
   req.log.error("test");
   req.log.critical("test");
-
 
   assert.equal(levels[0], 7);
   assert.equal(levels[1], 6);
@@ -90,20 +74,15 @@ test("can pass level correctly", function(done) {
 });
 
 test("can has unique id", function(done) {
-
   var req = {};
   var res = {};
   var levels = [];
 
-
   RequestLog.factory(function (level, id, _line, msg) {
-    levels.push(level);
+      levels.push(level);
     })(req, res, function() {});
-
-
 
   assert.ok(req.log.id);
 
   done();
 });
-
