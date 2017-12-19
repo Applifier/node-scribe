@@ -1,7 +1,7 @@
 {
   "name": "scribe",
   "description": "Scribe client",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "repository": {
     "type": "git",
     "url": "git://github.com/Applifier/node-scribe"
