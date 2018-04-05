@@ -1,13 +1,13 @@
 {
   "name": "scribe",
   "description": "Scribe client",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "repository": {
     "type": "git",
     "url": "git://github.com/Applifier/node-scribe"
   },
   "dependencies": {
-    "thrift" : "0.7.0"
+    "thrift": "0.9.2"
   },
   "author": "Applifier <opensource@applifier.com>"
 }
